@@ -1,6 +1,8 @@
 # RATGDO Android Controller
 
-An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garage door opener over your local Wi-Fi network. Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) connection for real-time door state updates without polling.
+An Android app for controlling a [RATGDO](https://ratcloud.llc/) garage door opener over your local Wi-Fi network. A modest comfort improvement over directly accessing the ESPHome Web UI directly from the phone's browser. 
+
+Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) connection for real-time door state updates without polling. 
 
 ---
 
@@ -24,11 +26,13 @@ An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garag
 
 ## Setup
 
-1. Install the app on your Android device (API 26+)
-2. Ensure your phone is connected to the same Wi-Fi network as your RATGDO
-3. Tap the **gear icon** in the top right
-4. Enter your RATGDO's IP address or hostname (e.g. `192.168.0.13`)
-5. Tap **Save** — the app will connect automatically and display the current door state
+1. (Prerequisite) Install and configure your RATGDO device on a local Wi-Fi network
+2. Install the app on your Android device (Android API 26+ supported, see *Releases* for the latest)
+3. Ensure your phone is connected to the same Wi-Fi network as your RATGDO
+4. Tap the **gear icon** in the top right
+5. Enter your RATGDO's IP address or hostname
+6. Tap **Save** — the app will connect automatically and display the current door state
+7. Open and close your garage door at your leisure
 
 ---
 
@@ -43,17 +47,17 @@ The app connects to the ESPHome Web API's `/events` endpoint and keeps a persist
 
 The SSE stream is stopped in `onPause()` and restarted in `onResume()` to avoid background battery drain.
 
+And that's it!
+
 ---
 
 ## Roadmap
 
 - [ ] Prompt to open WiFi settings when not connected
-- [ ] App icon
-- [ ] Home screen widget
 
 ---
 
-## Building
+## Building it yourself (if you want to make your own customizations)
 
 Clone the repo and open in Android Studio. No API keys or external dependencies required — the app communicates directly with your RATGDO over the local network.
 
@@ -70,7 +74,7 @@ Build system: Gradle (Groovy DSL)
 
 ## Related Projects
 
-- [RATGDO](https://paulwiggles.com/ratgdo/) — the hardware this app is built for
+- [RATGDO LLC](https://ratcloud.llc/) / [RATGDO Github](https://github.com/PaulWieland/ratgdo) — the hardware this app is built for
 - [ESPHome](https://esphome.io/) — the firmware powering the Web API
 
 ![RATDGO App Icon](app/src/main/ic_launcher-playstore.png)
