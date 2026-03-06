@@ -24,6 +24,11 @@ Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) 
 
 ---
 
+## Download
+[Download v1.0.0 APK](https://github.com/In-disBEALief/ratgdo-android/releases/download/v1.0.0/ratgdo-android-v1.0.0.apk)
+
+---
+
 ## Setup
 
 1. (Prerequisite) Install and configure your RATGDO device on a local Wi-Fi network
@@ -77,4 +82,4 @@ Build system: Gradle (Groovy DSL)
 - [RATGDO LLC](https://ratcloud.llc/) / [RATGDO Github](https://github.com/PaulWieland/ratgdo) — the hardware this app is built for
 - [ESPHome](https://esphome.io/) — the firmware powering the Web API
 
-![RATDGO App Icon](app/src/main/ic_launcher-playstore.png)
+![RATGDO App Icon](app/src/main/ic_launcher-playstore.png)
