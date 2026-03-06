@@ -1,15 +1,13 @@
-![RATDGO App Icon](app/src/main/ic_launcher-playstore.png)
-
 # RATGDO Android Controller
 
-An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garage door opener over your local WiFi network. Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) connection for real-time door state updates without polling.
+An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garage door opener over your local Wi-Fi network. Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) connection for real-time door state updates without polling.
 
 ---
 
 ## Hardware Requirements
 
 - A RATGDO device flashed with [ESPHome](https://esphome.io/) firmware with the Web API enabled
-- The RATGDO must be on the same local WiFi network as your phone (the app will check for this and walk you on target with error messages)
+- The RATGDO must be on the same local Wi-Fi network as your phone (the app will check for this and walk you on target with error messages)
 
 ---
 
@@ -17,7 +15,7 @@ An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garag
 
 - **Real-time door state** — live Open / Closed / Opening / Closing status via SSE stream
 - **Smart button states** — Open and Close buttons enable/disable contextually based on door movement
-- **Network validation** — verifies WiFi connectivity and confirms the RATGDO is reachable before enabling controls
+- **Network validation** — verifies Wi-Fi connectivity and confirms the RATGDO is reachable before enabling controls
 - **Auto-reconnect** — automatically re-establishes the SSE connection on disconnect or network interruption
 - **Persistent settings** — device IP or hostname saved via SharedPreferences, survives app restarts
 - **Light/dark mode** — adapts to system theme
@@ -27,7 +25,7 @@ An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garag
 ## Setup
 
 1. Install the app on your Android device (API 26+)
-2. Ensure your phone is connected to the same WiFi network as your RATGDO
+2. Ensure your phone is connected to the same Wi-Fi network as your RATGDO
 3. Tap the **gear icon** in the top right
 4. Enter your RATGDO's IP address or hostname (e.g. `192.168.0.13`)
 5. Tap **Save** — the app will connect automatically and display the current door state
@@ -38,7 +36,7 @@ An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garag
 
 The app connects to the ESPHome Web API's `/events` endpoint and keeps a persistent SSE stream open for the lifetime of the app's foreground session.
 
-- `SseManager` — runs on a background thread, parses the SSE stream line by line, and fires callbacks to `MainActivity` on connection, door state changes, and disconnection
+- `SseManager` — runs on a background thread, parses the SSE stream and fires callbacks to `MainActivity` on connection, door state changes, and disconnection
 - `MainActivity` — implements `SseManager.SseListener` and updates the UI on the main thread via `runOnUiThread()`
 - `SettingsActivity` — single screen for configuring the device IP, persisted via `SharedPreferences`
 - `RatgdoConstants` — shared constants class for SharedPreferences keys
@@ -74,3 +72,5 @@ Build system: Gradle (Groovy DSL)
 
 - [RATGDO](https://paulwiggles.com/ratgdo/) — the hardware this app is built for
 - [ESPHome](https://esphome.io/) — the firmware powering the Web API
+
+![RATDGO App Icon](app/src/main/ic_launcher-playstore.png)
