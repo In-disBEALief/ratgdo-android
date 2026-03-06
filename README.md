@@ -1,3 +1,5 @@
+![RATDGO App Icon](app/src/main/ic_launcher-playstore.png)
+
 # RATGDO Android Controller
 
 An Android app for controlling a [RATGDO](https://paulwiggles.com/ratgdo/) garage door opener over your local WiFi network. Built around the ESPHome Web API, it uses a persistent Server-Sent Events (SSE) connection for real-time door state updates without polling.
